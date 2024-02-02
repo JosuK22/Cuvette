@@ -1,2 +1,2 @@
-#Mini Project
+Mini Project
 HTML and CSS
