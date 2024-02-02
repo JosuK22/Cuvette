@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Inter';
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .div1 {
+      flex: 0 0 70%;
+      display: flex;
+    }
+
+    .left, .right {
+      /* flex: 1; */
+      background-color: #FFCD9E; /* Blue background color for left and right */
+      color: #000;
+      text-align: center;
+      /* padding: 20px; */
+      box-sizing: border-box;
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        background-color: #FFCD9E; /* Green background color for right */
+    }
+
+    .img{
+
+    }
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55%;
+        text-align: left; /* Align content to the left in the left div */
+        
+    }
+    .left-contents h1,
+    .left-contents p,
+    .left-contents .bold-text {
+    margin-bottom: 30px; /* Double the gap between each text */
+    }
+
+    p.bold-text {
+      font-weight: bold;
+    }
+    .email-input input,
+    .email-input button {
+        border: 4px solid #000; /* Black border */
+        border-radius: 8px; /* Border radius of 5 */
+        padding: 10px; /* Adjust padding as needed */
+        margin-right: 5px; /* Add margin between input and button */
+    }
+
+.email-input button{
+    background-color: #000;
+    color: #fff;
+    height: 62px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 700
+    ;
+}
+
+.email-input input{
+    width: 324px;
+    height: 34px;
+}
+.email-input input::placeholder {
+  font-size: 16px;
+  font-weight: 700; 
+}
+    .div2 {
+      flex: 0 0 30%;
+      background-color: #050505; /* Green background color for div2 */
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .list-container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .list {
+      flex: 0 0 48%; 
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+
+    .left-list li,
+    .right-list li {
+      margin-bottom: 10px;
+      list-style-type: none;
+    }
+
+    .left-list{
+        margin-left: 200px;
+        text-align: left;
+    }
+    .right-list{
+      text-align: right;
+      margin-right: 200px;
+    }
+
+    .list.right-list img {
+      width: 20px; /* Adjust the size of the logos */
+      margin-left: 5px; /* Add left margin between logos */
+    }
+    #social-media {
+    display: inline-flex;
+    font-size: 23px;
+    color:#FFCD9E;
+    margin:  .4rem .2rem 2rem;
+    transition: .5s ease;
+    border: 2px solid #FFCD9E;
+    border-radius: 5px;
+  }
+
+    /* .right-list li::before {
+      content: ""; 
+    } */
+  </style>
+  <title>Aligned Layout</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="div1">
+        <div class="left">
+            <div class="left-contents">
+                <h1>An inspiring design delivered to <br> your inbox every morning</h1>
+                <p>Our team scouts the internet for the best designs, <br> illustrations and art and delivers a truly inspiring <br> one every day to your inbox.</p>
+                <p class="bold-text">Show me how it looks</p>
+            
+                <div class="email-input">
+                    <input type="email" placeholder="Your e-mail address">
+                    <button>Register Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="img">
+                <img src="download.png" alt="Image"> 
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="div2">
+        <div class="list-container">
+
+            <div class="left-list">
+            
+                <ul>
+                    <li>Prompt Generator</li>
+                    <li>Dweep Daily</li>
+                    <li>All Contributors</li>
+                    <li>Your data on Dweep.io</li>
+                    <li>Contribute to Dweep</li>
+                </ul>
+
+            </div>
+
+            <div class="right-list">
+            
+                <ul>
+                    <li> Dweep.io</li>
+                    <li>Made with love in India</li>
+                    <li id="social-media"><i class="bx bxl-linkedin"></i></li>
+                    <li id="social-media"><i class="bx bxl-instagram"></i></li>
+                    <li>hello@dweep.io</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
