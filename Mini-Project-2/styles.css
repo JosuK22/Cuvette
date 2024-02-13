@@ -138,38 +138,38 @@
     width: 100vw;
 }
 
-.nav-logo{
+.logo{
     font-family: 'Delius Unicase', cursive;
     font-size: 32px;
 }
 
-.nav-options ul{
+.options ul{
     display: flex;
     list-style: none;
     align-items: center;
 }
 
-.nav-options ul li{
+.options ul li{
     margin-right: 15px;
 }
 
-.nav-options ul li select{
+.options ul li select{
     border: none;
     background-color: transparent;
     color: white;
 }
 
-.nav-options ul li input{
+.options ul li input{
     border-radius: 10px;
     padding: 10px 10px;
     border: none;
 }
 
-.nav-options ul li:last-of-type{
+.options ul li:last-of-type{
     position: relative;
 }
 
-.nav-options ul li img{
+.options ul li img{
     position: absolute;
     top: 10px;
     right: 10px;
@@ -179,7 +179,7 @@
 #search{
     margin-left: 490px;
 }
-.banner{
+.content{
     display: flex;   
     align-items: center;
     width: 90vw;
@@ -188,14 +188,14 @@
     margin-top: 120px;
 }
 
-.banner-left img{
+.content-left img{
     height: 45vh;
     border-radius: 20px;
     margin-right: 20px;
     margin-bottom: 20px;
 }
 
-.banner-right{
+.content-right{
     background-color: #E5D8FF;
     padding: 30px ;
     border-radius: 20px;
@@ -205,7 +205,7 @@
     margin-bottom: 20px;
 }
 
-.banner-right p{
+.content-right p{
     font-weight: 400;
     font-size: 24px;
     color: #6F7373;
