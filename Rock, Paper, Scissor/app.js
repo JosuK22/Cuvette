@@ -82,7 +82,7 @@ function displayWinner(results) {
       resultText.innerText = "You win!";
       resultDivs[0].classList.toggle("winner");
       UserScore(1);
-      if(user_score === 3) {
+      if(user_score === 15) {
         resultText.innerText = "You win the game!";
         // resultWinner.innerHTML = '<img src="./images/image-rules.svg" alt="You win">';
         resultWinner.classList.toggle("hidden");
@@ -91,7 +91,7 @@ function displayWinner(results) {
       resultText.innerText = "You lose!";
       resultDivs[1].classList.toggle("winner");
       CPUScore(1);
-      if(ai_score === 3) {
+      if(ai_score === 15) {
         resultText.innerText = "You lose the game!";
         // resultWinner.innerHTML = '<img src="./images/image-rules.svg" alt="You lose">';
         resultWinner.classList.toggle("hidden");
