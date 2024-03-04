@@ -1,4 +1,3 @@
-// Prevent animation on load
 setTimeout(() => {
   document.body.classList.remove("preload");
 }, 500);
