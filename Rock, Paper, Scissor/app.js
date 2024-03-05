@@ -1,3 +1,4 @@
+// Prevent animation on load
 setTimeout(() => {
   document.body.classList.remove("preload");
 }, 500);
@@ -30,6 +31,7 @@ const resultWinner = document.querySelector(".results__winner");
 const resultText = document.querySelector(".results__text");
 
 const playAgainBtn = document.querySelector(".play-again");
+const resetBtn = document.querySelector(".reset-game");
 
 const userscoreNumber = document.querySelector(".user_score__number");
 const aiscoreNumber = document.querySelector(".cpu_score__number");
@@ -81,19 +83,21 @@ function displayWinner(results) {
       resultText.innerText = "You win!";
       resultDivs[0].classList.toggle("winner");
       UserScore(1);
-      if(user_score === 15) {
+      if(user_score === 2) {
         resultText.innerText = "You win the game!";
-        // resultWinner.innerHTML = '<img src="./images/image-rules.svg" alt="You win">';
-        resultWinner.classList.toggle("hidden");
+        // resultWinner.classList.toggle("hidden");
+        document.querySelector(".reset-game").classList.remove("hidden");
+        document.querySelector(".play-again").classList.add("hidden");
       }
     } else if (aiWins) {
       resultText.innerText = "You lose!";
       resultDivs[1].classList.toggle("winner");
       CPUScore(1);
-      if(ai_score === 15) {
+      if(ai_score === 2) {
         resultText.innerText = "You lose the game!";
-        // resultWinner.innerHTML = '<img src="./images/image-rules.svg" alt="You lose">';
-        resultWinner.classList.toggle("hidden");
+        // resultWinner.classList.toggle("hidden");
+        document.querySelector(".reset-game").classList.remove("hidden");
+        document.querySelector(".play-again").classList.add("hidden");
       }
     } else {
       resultText.innerText = "Draw";
@@ -111,29 +115,14 @@ function isWinner(results) {
 function UserScore(point) {
   user_score += point;
   userscoreNumber.innerText = user_score;
-  // if (user_score === 1) {
-  //   displayWinnerImage("./images/icon-close.svg");
-  // }
 }
 
 function CPUScore(point) {
   ai_score += point;
   aiscoreNumber.innerText = ai_score;
-  // if (ai_score === 1) {
-  //   displayWinnerImage("./images/icon-close.svg");
-  // }
 }
 
-// function displayWinnerImage(result) {
-//   const resultImg = document.createElement("img");
-//   resultImg.src = `images/${result}.png`;
-//   resultImg.alt = result === "win" ? "You Win" : "You Lose";
-  
-//   const resultContainer = document.querySelector(".results__winner");
-//   resultContainer.innerHTML = "";
-//   resultContainer.appendChild(resultImg);
-//   resultContainer.classList.remove("hidden");
-// }
+
 
 // Play Again
 playAgainBtn.addEventListener("click", () => {
@@ -158,3 +147,29 @@ btnClose.addEventListener("click", () => {
   modalRules.classList.toggle("show-rules");
 });
 
+document.querySelector(".reset-game").addEventListener("click", () => {
+  // Reset scores
+  user_score = 0;
+  ai_score = 0;
+  userscoreNumber.innerText = user_score;
+  aiscoreNumber.innerText = ai_score;
+
+  // Hide result elements
+  resultText.innerText = "";
+  resultWinner.classList.add("hidden");
+  resultsDiv.classList.remove("show-winner");
+
+  // Show game elements
+  gameDiv.classList.remove("hidden");
+  resultsDiv.classList.add("hidden");
+
+  // Reset choices
+  resultDivs.forEach((resultDiv) => {
+    resultDiv.innerHTML = "";
+    resultDiv.classList.remove("winner");
+  });
+
+  // Reset play again button
+  document.querySelector(".play-again").classList.remove("hidden");
+  document.querySelector(".reset-game").classList.add("hidden");
+});
