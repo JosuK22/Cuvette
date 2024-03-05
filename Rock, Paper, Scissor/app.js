@@ -83,7 +83,7 @@ function displayWinner(results) {
       resultText.innerText = "You win!";
       resultDivs[0].classList.toggle("winner");
       UserScore(1);
-      if(user_score === 2) {
+      if(user_score === 15) {
         resultText.innerText = "You win the game!";
         // resultWinner.classList.toggle("hidden");
         document.querySelector(".reset-game").classList.remove("hidden");
@@ -93,7 +93,7 @@ function displayWinner(results) {
       resultText.innerText = "You lose!";
       resultDivs[1].classList.toggle("winner");
       CPUScore(1);
-      if(ai_score === 2) {
+      if(ai_score === 15) {
         resultText.innerText = "You lose the game!";
         // resultWinner.classList.toggle("hidden");
         document.querySelector(".reset-game").classList.remove("hidden");
